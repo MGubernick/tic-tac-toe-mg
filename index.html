@@ -20,8 +20,8 @@
 
   <div class="before-sign-in">
     <form id="sign-in">
-      <input type="text" name="credentials[email]" placeholder="email"/>
-      <input type="password" name="credentials[password]" placeholder="password"/>
+      <input type="text" name="credentials[email]" placeholder="email" />
+      <input type="password" name="credentials[password]" placeholder="password" />
       <button type="submit" name="button">Sign In!</button>
     </form>
 
@@ -36,14 +36,38 @@
   <div class="after-sign-in">
 
     <form id="change-password">
-      <input type="password" name="passwords[old]" placeholder="Old Password"/>
-      <input type="password" name="passwords[new]" placeholder="New Password"/>
+      <input type="password" name="passwords[old]" placeholder="Old Password" />
+      <input type="password" name="passwords[new]" placeholder="New Password" />
       <button type="submit" name="button">Change My Password!</button>
     </form>
 
     <button id="sign-out" type="button" name="button">Sign Out!</button>
-
   </div>
+
+  <h1 id="win-loss-message"></h1>
+
+  <form id="start-game">
+    <button class="new-game" type="button" name="button">New Game!</button>
+  </form>
+
+  <div class="after-new-game-click">
+    <div class="container">
+      <h1>Tic-Tac-Toe-Game!</h1>
+      <div class="row">
+        <div class="col-4 box alt-color">0</div>
+        <div class="col-4 box alt-color">1</div>
+        <div class="col-4 box alt-color">2</div>
+        <div class="col-4 box">3</div>
+        <div class="col-4 box">4</div>
+        <div class="col-4 box">5</div>
+        <div class="col-4 box alt-color">6</div>
+        <div class="col-4 box alt-color">7</div>
+        <div class="col-4 box alt-color">8</div>
+      </div>
+    </div>
+  </div>
+
+
 
 
 

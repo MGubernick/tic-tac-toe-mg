@@ -1,5 +1,6 @@
 'use strict'
 
+// Auth ui
 const store = require('./../store.js')
 
 // Sign Up Success and Failrue functions.
@@ -17,10 +18,11 @@ const signInSuccess = function (response) {
   $('#message').text('Sign In Successful! Enjoy Your Game!')
 
   store.user = response.user
-  console.log('store after is: ', store)
+  // console.log('store after is: ', store)
 
   $('.before-sign-in').hide()
   $('.after-sign-in').show()
+  $('#start-game').show()
   $('form').trigger('reset')
 }
 

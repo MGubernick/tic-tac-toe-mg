@@ -1,5 +1,6 @@
 'use strict'
 
+// Auth Events
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields')
