@@ -16,6 +16,27 @@ const newGame = function (data) {
   })
 }
 
+const spaceClick = function (cellIndex, playerPick) {
+  console.log('this is store ', store)
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    data: {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: playerPick
+        },
+        over: false
+      }
+    },
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  newGame: newGame
+  newGame: newGame,
+  spaceClick: spaceClick
 }

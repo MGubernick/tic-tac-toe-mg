@@ -1,14 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 
-$alt-color: $cyan;
-$body-bg-color: $gray-200;
-$font-color: $black;
+$alt-color: #37eb0f;
+$body-bg-color: #806320;
+$font-color: $white;
+$secondary: #0febd7;
+$lines: #f18205;
 
 
 .box {
   align-items: center;
-  // background-color: $secondary;
-  border: 1px solid black;
+  background-color: $secondary;
+  border: 1px solid $lines;
   color: $font-color;
   display: flex;
   height: 200px;
@@ -16,12 +18,13 @@ $font-color: $black;
   width: 100px;
 }
 
-// .alt-color {
-//   // background-color: $alt-color;
-// }
+.alt-color {
+  background-color: $alt-color;
+}
 
 body {
   align-items: center;
+  background-color: $body-bg-color;
   display: flex;
   flex-direction: column;
   margin: 10px;

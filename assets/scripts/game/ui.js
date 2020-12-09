@@ -18,7 +18,21 @@ const onNewGameFailure = function (error) {
   $('#message').text('Uh Oh..Something went wrong, take a look. Error: ' + error.responseJSON.message)
 }
 
+const spaceClickSuccess = function (response) {
+  $('.players-turn').text('Who\'s turn: O')
+
+  store.game = response.game
+  const gameObject = store.game
+  console.log(gameObject)
+}
+
+const spaceClickFailure = function (error) {
+  $('#message').text('Ooops, that didn\'t work, someone already chose that space...Error: ' + error.responseJSON.message)
+}
+
 module.exports = {
   onNewGameSuccess: onNewGameSuccess,
-  onNewGameFailure: onNewGameFailure
+  onNewGameFailure: onNewGameFailure,
+  spaceClickSuccess: spaceClickSuccess,
+  spaceClickFailure: spaceClickFailure
 }

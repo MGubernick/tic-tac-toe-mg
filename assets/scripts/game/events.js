@@ -5,10 +5,9 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 // const getFormFields = require('./../../../lib/get-form-fields')
+const store = require('./../store.js')
 
 const onNewGame = function (event) {
-  // const form = event.target
-  // const data = getFormFields(form)
   api.newGame()
     .then(function (response) {
       console.log(response)
@@ -18,6 +17,22 @@ const onNewGame = function (event) {
     .catch(ui.onNewGameFailure)
 }
 
+const playerPick = 'X'
+
+const onSpaceClick = function (event) {
+  $(this).html(playerPick)
+  const cellIndex = $(this).data()
+
+  api.spaceClick(cellIndex, playerPick)
+    .then(function (response) {
+      console.log(response)
+      return response
+    })
+    .then(ui.spaceClickSuccess)
+    .catch(ui.spaceClickFailure)
+}
+
 module.exports = {
-  onNewGame: onNewGame
+  onNewGame: onNewGame,
+  onSpaceClick: onSpaceClick
 }
