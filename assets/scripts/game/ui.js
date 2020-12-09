@@ -19,6 +19,7 @@ const onNewGameFailure = function (error) {
 }
 
 const spaceClickSuccess = function (response) {
+  $('#bad-space').hide()
   $('.players-turn').text('Who\'s turn: O')
 
   store.game = response.game
@@ -30,9 +31,14 @@ const spaceClickFailure = function (error) {
   $('#message').text('Ooops, that didn\'t work, someone already chose that space...Error: ' + error.responseJSON.message)
 }
 
+// const spaceClickInvalid = function (response) {
+//   $('#message').text('That space is already taken, try again!')
+// }
+
 module.exports = {
   onNewGameSuccess: onNewGameSuccess,
   onNewGameFailure: onNewGameFailure,
   spaceClickSuccess: spaceClickSuccess,
   spaceClickFailure: spaceClickFailure
+  // spaceClickInvalid: spaceClickInvalid
 }

@@ -20,16 +20,27 @@ const onNewGame = function (event) {
 const playerPick = 'X'
 
 const onSpaceClick = function (event) {
-  $(this).html(playerPick)
-  const cellIndex = $(this).data()
+  $(event.target).html(playerPick)
+  const cellIndex = $(event.target).data('cell-index')
+  console.log(cellIndex)
 
-  api.spaceClick(cellIndex, playerPick)
-    .then(function (response) {
-      console.log(response)
-      return response
-    })
-    .then(ui.spaceClickSuccess)
-    .catch(ui.spaceClickFailure)
+  const gameArray = store.game.cells
+  console.log(gameArray)
+
+  const gameArrayIndex = gameArray[cellIndex]
+  console.log(gameArrayIndex)
+
+  if (gameArrayIndex !== 'X') {
+    api.spaceClick(cellIndex, playerPick)
+      .then(function (response) {
+        console.log(response)
+        return response
+      })
+      .then(ui.spaceClickSuccess)
+      .catch(ui.spaceClickFailure)
+  } else {
+    $('#bad-space').show()
+  }
 }
 
 module.exports = {

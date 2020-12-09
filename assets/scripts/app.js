@@ -9,6 +9,7 @@ $(() => {
   $('.after-sign-in').hide()
   $('#start-game').hide()
   $('.after-new-game-click').hide()
+  $('#bad-space').hide()
   // signup listener
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
