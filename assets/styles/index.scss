@@ -2,22 +2,23 @@
 
 $alt-color: $cyan;
 $body-bg-color: $gray-200;
-$font-color: $light;
+$font-color: $black;
 
 
 .box {
   align-items: center;
-  background-color: $secondary;
-  border: 1px solid $white;
+  // background-color: $secondary;
+  border: 1px solid black;
   color: $font-color;
   display: flex;
-  height: 80px;
+  height: 200px;
   justify-content: center;
+  width: 100px;
 }
 
-.alt-color {
-  background-color: $alt-color;
-}
+// .alt-color {
+//   // background-color: $alt-color;
+// }
 
 body {
   align-items: center;

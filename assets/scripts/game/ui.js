@@ -5,10 +5,13 @@ const store = require('./../store.js')
 
 const onNewGameSuccess = function (response) {
   $('.after-new-game-click').show()
+  $('#change-password').hide()
   $('#message').text('New Game Started, Lets Go!')
-  store.games = response.games
+  store.game = response.game
 
-  console.log('Here is whats I stored:', store.games)
+  const gameObject = store.game
+
+  console.log('Here is the new game object:', gameObject)
 }
 
 const onNewGameFailure = function (error) {
