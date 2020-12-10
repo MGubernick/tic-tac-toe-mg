@@ -1,10 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
 
 $alt-color: #37eb0f;
-$body-bg-color: #806320;
-$font-color: $white;
+$body-bg-color: #e9dd21;
+$body-bg-color-2: #a79e13;
+$font-color: #873600;
 $secondary: #0febd7;
 $lines: #f18205;
+$button-bg: #009e1d;
+
+body {
+  align-items: center;
+  background-color: $body-bg-color-2;
+  color: $font-color;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace, sans-serif;
+  margin: 10px;
+  padding: 10px;
+}
+
+button {
+  background-color: $button-bg;
+  border-radius: 10px;
+  border-style: outset;
+}
+
+form {
+  padding: 5px;
+}
+
+h1 {
+  font-family: fantasy;
+}
+
+input {
+  border: 1px solid $lines;
+  border-radius: 5px;
+}
 
 
 .box {
@@ -18,19 +50,10 @@ $lines: #f18205;
   width: 100px;
 }
 
+.box-set {
+  color: $black;
+}
+
 .alt-color {
   background-color: $alt-color;
-}
-
-body {
-  align-items: center;
-  background-color: $body-bg-color;
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  padding: 10px;
-}
-
-form {
-  padding: 5px;
 }
