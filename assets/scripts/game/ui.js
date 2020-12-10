@@ -27,6 +27,8 @@ const spaceClickSuccess = function (response) {
   store.game.cells = response.game.cells
   const gameObject = store.game.cells
   console.log(gameObject)
+  // create a variable to change the game over variable
+  // const gameOver = store.over
   gamewin.checkWin(gameObject)
 }
 
