@@ -17,14 +17,24 @@ const onNewGame = function (event) {
     .catch(ui.onNewGameFailure)
 }
 // Player starts as x
-const playerPick = 'X'
+const firstPlayer = 'X'
+const secondPlayer = 'O'
+let playerPick
 
-// const firstPlayer = 'X'
-//
-// const secondPlayer = 'O'
-
+const playerChange = function () {
+  // if the player pick = first player, switch to second player
+  if (playerPick === firstPlayer) {
+    playerPick = secondPlayer
+    $('#players-turn').text('Who\'s turn: O')
+    // else if the player pick is second player, switch to first player.
+  } else {
+    playerPick = firstPlayer
+    $('#players-turn').text('Who\'s turn: X')
+  }
+}
+// console.log('this is players pick ', playerPick)
+playerPick = firstPlayer
 const onSpaceClick = function (event) {
-  $(event.target).html(playerPick)
   const cellIndex = $(event.target).data('cell-index')
   console.log(cellIndex)
   // find the game array in the store
@@ -34,7 +44,7 @@ const onSpaceClick = function (event) {
   const gameArrayIndex = gameArray[cellIndex]
   console.log(gameArrayIndex)
   // when user clicks - check that the space is empty
-  if (gameArrayIndex !== 'X') {
+  if (gameArrayIndex !== firstPlayer && gameArrayIndex !== secondPlayer) {
     api.spaceClick(cellIndex, playerPick)
       .then(function (response) {
         console.log(response)
@@ -42,9 +52,14 @@ const onSpaceClick = function (event) {
       })
       .then(ui.spaceClickSuccess)
       .catch(ui.spaceClickFailure)
+    $(event.target).html(playerPick)
+    // this is when we want to know if the tur wins the game.
+    // switch players turn and continue
+    playerChange()
   } else {
     $('#bad-space').show()
   }
+  console.log(gameArray)
 }
 
 module.exports = {
