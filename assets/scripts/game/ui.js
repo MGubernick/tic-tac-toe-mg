@@ -3,8 +3,10 @@
 // Game ui
 const store = require('./../store.js')
 const gamewin = require('./gamewin.js')
+// const gameEvents = ('./events.js')
 
 const onNewGameSuccess = function (response) {
+  // $('.click-space').on('click', gameEvents.onSpaceClick)
   $('.after-new-game-click').show()
   $('#change-password').hide()
   $('#message').text('New Game Started, Lets Go!')
@@ -25,7 +27,7 @@ const onNewGameFailure = function (error) {
 const spaceClickSuccess = function (response) {
   $('#bad-space').hide()
 
-  store.game.cells = response.game.cells
+  store.game = response.game
   const gameObject = store.game.cells
   console.log(gameObject)
   // create a variable to change the game over variable
@@ -38,10 +40,8 @@ const spaceClickFailure = function (error) {
 }
 
 const gameOverSuccess = function (response) {
-  // store.game.cells = response.game.cells
-  // const gameObject = store.game.cells
-  // console.log('end of game object', gameObject)
-  $('#message').text('Well Played!')
+  $('#message').text('Game Over! Well Played!')
+  $('.click-space').off()
 }
 
 const gameOverFailure = function (error) {

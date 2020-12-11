@@ -36,7 +36,7 @@ const spaceClick = function (cellIndex, playerPick) {
   })
 }
 
-const gameOver = function (cellIndex, playerPick) {
+const gameOver = function () {
   console.log('this is store ', store)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
@@ -44,8 +44,8 @@ const gameOver = function (cellIndex, playerPick) {
     data: {
       game: {
         cell: {
-          index: cellIndex,
-          value: playerPick
+          index: 0,
+          value: 'x'
         },
         over: true
       }

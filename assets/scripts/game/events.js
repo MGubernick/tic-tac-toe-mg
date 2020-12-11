@@ -6,8 +6,10 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 // const getFormFields = require('./../../../lib/get-form-fields')
 const store = require('./../store.js')
+const gamewin = require('./gamewin.js')
 // new game event handler
 const onNewGame = function (event) {
+  $('.click-space').on('click', onSpaceClick)
   api.newGame()
     .then(function (response) {
       console.log(response)
@@ -46,34 +48,46 @@ const onSpaceClick = function (event) {
   console.log(gameArrayIndex)
   // when user clicks - check that the space is empty
   if (gameArrayIndex !== firstPlayer && gameArrayIndex !== secondPlayer) {
-    api.spaceClick(cellIndex, playerPick)
-      .then(function (response) {
-        console.log(response)
-        return response
-      })
-      .then(ui.spaceClickSuccess)
-      .catch(ui.spaceClickFailure)
+    // store.game.cells[cellIndex] = playerPick
+    gameArray[cellIndex] = playerPick
+
+    const winGame = gamewin.checkWin(gameArray)
     $(event.target).html(playerPick)
-    // this is when we want to know if the tur wins the game.
-    // switch players turn and continue
-    playerChange()
+    console.log(winGame)
+    if (winGame === true) {
+      api.gameOver()
+        .then(ui.gameOverSuccess)
+        .catch(ui.gameOverFailure)
+    } else if (winGame === false) {
+      api.spaceClick(cellIndex, playerPick)
+        .then(function (response) {
+          console.log(response)
+          return response
+        })
+        .then(ui.spaceClickSuccess)
+        .catch(ui.spaceClickFailure)
+      // this is when we want to know if the tur wins the game.
+      // switch players turn and continue
+      playerChange()
+    }
   } else {
     $('#bad-space').show()
   }
-  console.log(gameArray)
+  // console.log(gameArray)
 }
 
-const onGameOver = function (event) {
-  const cellIndex = $(event.target).data()
-  console.log(cellIndex)
-
-  api.gameOver(cellIndex, playerPick)
-    .then(ui.gameOverSuccess)
-    .catch(ui.gameOverFailure)
-}
+// const onGameOver = function (response) {
+//   if (response === true) {
+//     api.gameOver()
+//       .then(ui.gameOverSuccess)
+//       .catch(ui.gameOverFailure)
+//   } else {
+//     console.log('that didn\'t work')
+//   }
+// }
 
 module.exports = {
   onNewGame: onNewGame,
-  onSpaceClick: onSpaceClick,
-  onGameOver: onGameOver
+  onSpaceClick: onSpaceClick
+  // onGameOver: onGameOver
 }
