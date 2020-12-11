@@ -1,7 +1,9 @@
 'use strict'
 
 // const store = require('./../store')
-
+// const api = require('./api.js')
+// const ui = require('./ui.js')
+const events = require('./events.js')
 // const gameArray = store.game.cells
 //
 // const playerPick = 'X'
@@ -42,6 +44,7 @@ const checkWin = function (gameArray) {
   } else if (gameArray[3] !== '' && gameArray[3] === gameArray[4] && gameArray[3] === gameArray[5]) {
     console.log('Winner Winner, Chicken Dinner-Middle!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Across-Middle!')
+
     // indicate the game is over by changing the game over variable to true
     // third row win
   } else if (gameArray[6] !== '' && gameArray[6] === gameArray[7] && gameArray[6] === gameArray[8]) {
@@ -70,8 +73,8 @@ const checkWin = function (gameArray) {
     console.log('Next Turn!')
   }
 }
-// console.log(checkWin(gameArray))
 
+// console.log(checkWin(gameArray))
 module.exports = {
   checkWin: checkWin
 }

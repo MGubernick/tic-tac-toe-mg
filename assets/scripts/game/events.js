@@ -32,8 +32,9 @@ const playerChange = function () {
     $('#players-turn').text('Who\'s turn: X')
   }
 }
-// console.log('this is players pick ', playerPick)
+// set first player is x
 playerPick = firstPlayer
+
 const onSpaceClick = function (event) {
   const cellIndex = $(event.target).data('cell-index')
   console.log(cellIndex)
@@ -62,7 +63,17 @@ const onSpaceClick = function (event) {
   console.log(gameArray)
 }
 
+const onGameOver = function (event) {
+  const cellIndex = $(event.target).data()
+  console.log(cellIndex)
+
+  api.gameOver(cellIndex, playerPick)
+    .then(ui.gameOverSuccess)
+    .catch(ui.gameOverFailure)
+}
+
 module.exports = {
   onNewGame: onNewGame,
-  onSpaceClick: onSpaceClick
+  onSpaceClick: onSpaceClick,
+  onGameOver: onGameOver
 }

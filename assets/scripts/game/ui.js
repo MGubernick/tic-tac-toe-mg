@@ -15,6 +15,7 @@ const onNewGameSuccess = function (response) {
   console.log('Here is the new game object:', gameObject)
   $('.click-space').html('')
   $('#bad-space').hide()
+  $('#win-draw-text').html('')
 }
 
 const onNewGameFailure = function (error) {
@@ -28,17 +29,30 @@ const spaceClickSuccess = function (response) {
   const gameObject = store.game.cells
   console.log(gameObject)
   // create a variable to change the game over variable
-  // const gameOver = store.over
+
   gamewin.checkWin(gameObject)
 }
 
 const spaceClickFailure = function (error) {
-  $('#message').text('Ooops, that didn\'t work, someone already chose that space...Error: ' + error.responseJSON.message)
+  $('#message').text('Ooops, that didn\'t work, someone already chose that space...Error: ' + error.responseJSON)
+}
+
+const gameOverSuccess = function (response) {
+  // store.game.cells = response.game.cells
+  // const gameObject = store.game.cells
+  // console.log('end of game object', gameObject)
+  $('#message').text('Well Played!')
+}
+
+const gameOverFailure = function (error) {
+  $('#message').text('Uh Oh, that didn\'t work...Error: ' + error.responseJSON.message)
 }
 
 module.exports = {
   onNewGameSuccess: onNewGameSuccess,
   onNewGameFailure: onNewGameFailure,
   spaceClickSuccess: spaceClickSuccess,
-  spaceClickFailure: spaceClickFailure
+  spaceClickFailure: spaceClickFailure,
+  gameOverSuccess: gameOverSuccess,
+  gameOverFailure: gameOverFailure
 }
