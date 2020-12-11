@@ -56,8 +56,20 @@ const gameOver = function () {
   })
 }
 
+const gameIndex = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   newGame: newGame,
   spaceClick: spaceClick,
-  gameOver: gameOver
+  gameOver: gameOver,
+  gameIndex: gameIndex
 }

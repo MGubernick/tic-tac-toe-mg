@@ -8,6 +8,7 @@ const gamewin = require('./gamewin.js')
 const onNewGameSuccess = function (response) {
   // $('.click-space').on('click', gameEvents.onSpaceClick)
   $('.after-new-game-click').show()
+  $('#after-game-ends').hide()
   $('#change-password').hide()
   $('#message').text('New Game Started, Lets Go!')
   store.game = response.game
@@ -42,10 +43,23 @@ const spaceClickFailure = function (error) {
 const gameOverSuccess = function (response) {
   $('#message').text('Game Over! Well Played!')
   $('.click-space').off()
+  $('#after-game-ends').show()
 }
 
 const gameOverFailure = function (error) {
   $('#message').text('Uh Oh, that didn\'t work...Error: ' + error.responseJSON.message)
+}
+
+const onGameIndexSuccess = function (response) {
+  store.games = response.games
+  const arrOfGames = store.games
+  const gamesPlayed = arrOfGames.length
+
+  $('#win-draw-text').text(`Congrats! you've played ${gamesPlayed} games!`)
+}
+
+const onGameIndexFailure = function (error) {
+  $('message').text('Uh Oh, something went wrong...Error: ' + error.responseJSON.message)
 }
 
 module.exports = {
@@ -54,5 +68,7 @@ module.exports = {
   spaceClickSuccess: spaceClickSuccess,
   spaceClickFailure: spaceClickFailure,
   gameOverSuccess: gameOverSuccess,
-  gameOverFailure: gameOverFailure
+  gameOverFailure: gameOverFailure,
+  onGameIndexSuccess: onGameIndexSuccess,
+  onGameIndexFailure: onGameIndexFailure
 }

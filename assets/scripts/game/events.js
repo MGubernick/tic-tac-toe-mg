@@ -4,7 +4,7 @@
 
 const api = require('./api.js')
 const ui = require('./ui.js')
-// const getFormFields = require('./../../../lib/get-form-fields')
+const getFormFields = require('./../../../lib/get-form-fields')
 const store = require('./../store.js')
 const gamewin = require('./gamewin.js')
 // new game event handler
@@ -76,6 +76,15 @@ const onSpaceClick = function (event) {
   // console.log(gameArray)
 }
 
+const onGameIndex = function (event) {
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.gameIndex(data)
+    .then(ui.onGameIndexSuccess)
+    .catch(ui.onGameIdexFailure)
+}
+
 // const onGameOver = function (response) {
 //   if (response === true) {
 //     api.gameOver()
@@ -88,6 +97,7 @@ const onSpaceClick = function (event) {
 
 module.exports = {
   onNewGame: onNewGame,
-  onSpaceClick: onSpaceClick
+  onSpaceClick: onSpaceClick,
+  onGameIndex: onGameIndex
   // onGameOver: onGameOver
 }
