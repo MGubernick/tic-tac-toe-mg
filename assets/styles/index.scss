@@ -9,6 +9,7 @@ $lines: #f18205;
 $button-bg: #009e1d;
 
 body {
+  align-content: center;
   align-items: center;
   background-color: $body-bg-color-2;
   color: $font-color;
@@ -56,4 +57,20 @@ input {
 
 .alt-color {
   background-color: $alt-color;
+}
+
+.headline {
+  font-size: 70px;
+}
+
+.my-name {
+  font-size: 20px;
+}
+
+.container {
+  border: 50px outset $font-color;
+}
+
+.click-space {
+  font-size: 90px;
 }

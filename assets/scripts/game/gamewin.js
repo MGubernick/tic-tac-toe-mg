@@ -42,12 +42,12 @@ const checkWin = function (gameArray) {
     // d l - r win
   } else if (gameArray[0] !== '' && gameArray[0] === gameArray[4] && gameArray[0] === gameArray[8]) {
     console.log('Winner Winner, Chicken Dinner-Diagonal-Left-to-Right!')
-    $('#win-draw-text').text('Winner Winner, Chicken Dinner-Diagonal-Left-to-Right!')
+    $('#win-draw-text').text('Winner Winner, Chicken Dinner-Diagonal!')
     winGame = true
     // d r - l win
   } else if (gameArray[2] !== '' && gameArray[2] === gameArray[4] && gameArray[2] === gameArray[6]) {
     console.log('Winner Winner, Chicken Dinner-Diagonal-Right-to-Left!')
-    $('#win-draw-text').text('Winner Winner, Chicken Dinner-Diagonal-Right-to-Left!')
+    $('#win-draw-text').text('Winner Winner, Chicken Dinner-Diagonal!')
     winGame = true
     // check to see if all spaces are taken and if so - its a draw!
   } else if (gameArray.every(isPopulated) === true) {
