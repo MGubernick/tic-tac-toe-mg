@@ -1,17 +1,21 @@
 @import '~bootstrap/scss/bootstrap';
 
-$alt-color: #37eb0f;
-$body-bg-color: #e9dd21;
-$body-bg-color-2: #a79e13;
-$font-color: #873600;
-$secondary: #0febd7;
+$alt-color: #9b59b6;
+$alt-alt-color: #10c135;
+$body-bg-color: #b84904;
+$body-bg-color-2: #25963e;
+$container-border: #8f522c;
+$font-color: #e4dd0c;
+$font-color-2: #b84904;
+$secondary: #1fcdab;
+$second-secondary: #009e1d;
 $lines: #f18205;
 $button-bg: #009e1d;
 
 body {
   align-content: center;
   align-items: center;
-  background-color: $body-bg-color-2;
+  background-color: $body-bg-color;
   color: $font-color;
   display: flex;
   flex-direction: column;
@@ -42,9 +46,9 @@ input {
 
 .box {
   align-items: center;
-  background-color: $secondary;
+  background-color: $second-secondary;
   border: 1px solid $lines;
-  color: $font-color;
+  color: $font-color-2;
   display: flex;
   height: 200px;
   justify-content: center;
@@ -56,7 +60,7 @@ input {
 }
 
 .alt-color {
-  background-color: $alt-color;
+  background-color: $secondary;
 }
 
 .headline {
@@ -68,7 +72,7 @@ input {
 }
 
 .container {
-  border: 50px outset $font-color;
+  border: 20px outset $container-border;
 }
 
 .click-space {
