@@ -12,7 +12,7 @@ const onNewGame = function (event) {
   $('.click-space').on('click', onSpaceClick)
   api.newGame()
     .then(function (response) {
-      console.log(response)
+      // console.log(response)
       return response
     })
     .then(ui.onNewGameSuccess)
@@ -34,18 +34,43 @@ const playerChange = function () {
     $('#players-turn').text('Who\'s turn: X')
   }
 }
+
+// function to select which player goes first.
+
 // set first player is x
 playerPick = firstPlayer
 
+const oneToTwo = function (event) {
+  const select = event.target
+  if (select) {
+    playerPick = secondPlayer
+    $('#players-turn').text('First Player: O')
+  } else {
+    playerPick = firstPlayer
+  }
+  return playerPick
+}
+
+const twoToOne = function (event) {
+  const select = event.target
+  if (select) {
+    playerPick = firstPlayer
+    $('#players-turn').text('First Player: X')
+  } else {
+    playerPick = secondPlayer
+  }
+  return playerPick
+}
+
 const onSpaceClick = function (event) {
   const cellIndex = $(event.target).data('cell-index')
-  console.log(cellIndex)
+  // console.log(cellIndex)
   // find the game array in the store
   const gameArray = store.game.cells
-  console.log(gameArray)
+  // console.log(gameArray)
 
   const gameArrayIndex = gameArray[cellIndex]
-  console.log(gameArrayIndex)
+  // console.log(gameArrayIndex)
   // when user clicks - check that the space is empty
   if (gameArrayIndex !== firstPlayer && gameArrayIndex !== secondPlayer) {
     // store.game.cells[cellIndex] = playerPick
@@ -53,7 +78,7 @@ const onSpaceClick = function (event) {
 
     const winGame = gamewin.checkWin(gameArray)
     $(event.target).html(playerPick)
-    console.log(winGame)
+    // console.log(winGame)
     if (winGame === true) {
       api.gameOver()
         .then(ui.gameOverSuccess)
@@ -61,7 +86,7 @@ const onSpaceClick = function (event) {
     } else if (winGame === false) {
       api.spaceClick(cellIndex, playerPick)
         .then(function (response) {
-          console.log(response)
+          // console.log(response)
           return response
         })
         .then(ui.spaceClickSuccess)
@@ -98,6 +123,8 @@ const onGameIndex = function (event) {
 module.exports = {
   onNewGame: onNewGame,
   onSpaceClick: onSpaceClick,
-  onGameIndex: onGameIndex
+  onGameIndex: onGameIndex,
+  oneToTwo: oneToTwo,
+  twoToOne: twoToOne
   // onGameOver: onGameOver
 }

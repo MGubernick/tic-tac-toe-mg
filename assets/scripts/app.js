@@ -18,5 +18,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#start-game').on('click', gameEvents.onNewGame)
   $('.all-the-games').on('click', gameEvents.onGameIndex)
+  $('.o-go-first').on('click', gameEvents.oneToTwo)
+  $('.x-go-first').on('click', gameEvents.twoToOne)
   // $('.click-space').on('click', gameEvents.onSpaceClick)
 })

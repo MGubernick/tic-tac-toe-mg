@@ -17,7 +17,7 @@ const newGame = function (data) {
 }
 
 const spaceClick = function (cellIndex, playerPick) {
-  console.log('this is store ', store)
+  // console.log('this is store ', store)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -37,7 +37,7 @@ const spaceClick = function (cellIndex, playerPick) {
 }
 
 const gameOver = function () {
-  console.log('this is store ', store)
+  // console.log('this is store ', store)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',

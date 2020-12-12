@@ -11,6 +11,7 @@ $secondary: #1fcdab;
 $second-secondary: #009e1d;
 $lines: #f18205;
 $button-bg: #009e1d;
+$black: #000;
 
 body {
   align-content: center;
@@ -42,7 +43,6 @@ input {
   border: 1px solid $lines;
   border-radius: 5px;
 }
-
 
 .box {
   align-items: center;

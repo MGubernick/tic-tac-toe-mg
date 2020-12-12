@@ -13,9 +13,9 @@ const onNewGameSuccess = function (response) {
   $('#message').text('New Game Started, Lets Go!')
   store.game = response.game
 
-  const gameObject = store.game
-
-  console.log('Here is the new game object:', gameObject)
+  // const gameObject = store.game
+  //
+  // console.log('Here is the new game object:', gameObject)
   $('.click-space').html('')
   $('#bad-space').hide()
   $('#win-draw-text').html('')
@@ -30,7 +30,7 @@ const spaceClickSuccess = function (response) {
 
   store.game = response.game
   const gameObject = store.game.cells
-  console.log(gameObject)
+  // console.log(gameObject)
   // create a variable to change the game over variable
 
   gamewin.checkWin(gameObject)

@@ -45,6 +45,7 @@ const signOutSuccess = function () {
   $('.after-sign-in').hide()
   $('.after-new-game-click').hide()
   $('#start-game').hide()
+  $('#after-game-ends').hide()
   $('form').trigger('reset')
   store.user = null
 }

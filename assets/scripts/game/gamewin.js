@@ -10,52 +10,61 @@ const checkWin = function (gameArray) {
   let winGame = store.game.over // by default is false
   // first row win
   if (gameArray[0] !== '' && gameArray[0] === gameArray[1] && gameArray[0] === gameArray[2]) {
-    console.log('Winner Winner, Chicken Dinner-Top!')
+    // console.log('Winner Winner, Chicken Dinner-Top!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Across-Top!')
+    $('#bad-space').hide()
     // indicate the game is over by changing the game.over value to true
     winGame = true
     // second row win
   } else if (gameArray[3] !== '' && gameArray[3] === gameArray[4] && gameArray[3] === gameArray[5]) {
-    console.log('Winner Winner, Chicken Dinner-Middle!')
+    // console.log('Winner Winner, Chicken Dinner-Middle!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Across-Middle!')
+    $('#bad-space').hide()
     winGame = true
     // third row win
   } else if (gameArray[6] !== '' && gameArray[6] === gameArray[7] && gameArray[6] === gameArray[8]) {
-    console.log('Winner Winner, Chicken Dinner-Bottom!')
+    // console.log('Winner Winner, Chicken Dinner-Bottom!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Across-Bottom!')
+    $('#bad-space').hide()
     winGame = true
     // vert l win
   } else if (gameArray[0] !== '' && gameArray[0] === gameArray[3] && gameArray[0] === gameArray[6]) {
-    console.log('Winner Winner, Chicken Dinner-Vertical-Left!')
+    // console.log('Winner Winner, Chicken Dinner-Vertical-Left!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Vertical-Left!')
+    $('#bad-space').hide()
     winGame = true
     // vert mid win
   } else if (gameArray[1] !== '' && gameArray[1] === gameArray[4] && gameArray[1] === gameArray[7]) {
-    console.log('Winner Winner, Chicken Dinner-Vertical-Middle!')
+    // console.log('Winner Winner, Chicken Dinner-Vertical-Middle!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Vertical-Middle!')
+    $('#bad-space').hide()
     winGame = true
     // vert r win
   } else if (gameArray[2] !== '' && gameArray[2] === gameArray[5] && gameArray[2] === gameArray[8]) {
-    console.log('Winner Winner, Chicken Dinner-Vertical-Right!')
+    // console.log('Winner Winner, Chicken Dinner-Vertical-Right!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Vertical-Right!')
+    $('#bad-space').hide()
     winGame = true
     // d l - r win
   } else if (gameArray[0] !== '' && gameArray[0] === gameArray[4] && gameArray[0] === gameArray[8]) {
-    console.log('Winner Winner, Chicken Dinner-Diagonal-Left-to-Right!')
+    // console.log('Winner Winner, Chicken Dinner-Diagonal-Left-to-Right!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Diagonal!')
+    $('#bad-space').hide()
     winGame = true
     // d r - l win
   } else if (gameArray[2] !== '' && gameArray[2] === gameArray[4] && gameArray[2] === gameArray[6]) {
-    console.log('Winner Winner, Chicken Dinner-Diagonal-Right-to-Left!')
+    // console.log('Winner Winner, Chicken Dinner-Diagonal-Right-to-Left!')
     $('#win-draw-text').text('Winner Winner, Chicken Dinner-Diagonal!')
+    $('#bad-space').hide()
     winGame = true
     // check to see if all spaces are taken and if so - its a draw!
   } else if (gameArray.every(isPopulated) === true) {
-    console.log('Draw!')
+    // console.log('Draw!')
     $('#win-draw-text').text('It\'s a Draw!')
+    $('#bad-space').hide()
     winGame = true
   } else {
-    console.log('Next Turn!')
+    // console.log('Next Turn!')
   }
   return winGame
 }
