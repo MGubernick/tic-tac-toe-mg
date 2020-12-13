@@ -79,7 +79,7 @@ const onSpaceClick = function (event) {
   const gameArrayIndex = gameArray[cellIndex]
   // console.log(gameArrayIndex)
   // when user clicks - check that the space is empty
-  if (gameArrayIndex !== firstPlayer && gameArrayIndex !== secondPlayer) {
+  if (gameArrayIndex !== firstPlayer.fontcolor('#b84904') && gameArrayIndex !== secondPlayer.fontcolor('#e4dd0c')) {
     // store.game.cells[cellIndex] = playerPick
     gameArray[cellIndex] = playerPick
     // check to see if the game was won
