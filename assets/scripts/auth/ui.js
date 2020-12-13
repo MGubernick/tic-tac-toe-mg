@@ -30,6 +30,7 @@ const signInFailure = function (error) {
   $('#message').text('Oops! Sign In Failed...because Error: ' + error.responseJSON.message)
 }
 
+// change password success and failure
 const changePasswordSuccess = function () {
   $('#message').text('Changed Your Password Successfully!')
   $('form').trigger('reset')
@@ -39,6 +40,7 @@ const changePasswordFailure = function (error) {
   $('#message').text('Ooops! Your Password Didn\'t Change...because Error: ' + error.responseJSON.message)
 }
 
+// sign out success and failure
 const signOutSuccess = function () {
   $('#message').text('Signed Out Successfully! See Ya Later!')
   $('.before-sign-in').show()

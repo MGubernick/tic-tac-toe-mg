@@ -4,6 +4,7 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
+// new game api function
 const newGame = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -16,6 +17,7 @@ const newGame = function (data) {
   })
 }
 
+// api function for clicking on a space
 const spaceClick = function (cellIndex, playerPick) {
   // console.log('this is store ', store)
   return $.ajax({
@@ -36,6 +38,7 @@ const spaceClick = function (cellIndex, playerPick) {
   })
 }
 
+// api function for game over
 const gameOver = function () {
   // console.log('this is store ', store)
   return $.ajax({
@@ -56,6 +59,7 @@ const gameOver = function () {
   })
 }
 
+// api function for finding how many games you have played
 const gameIndex = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games',

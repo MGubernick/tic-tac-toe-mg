@@ -18,6 +18,7 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 }
 
+// sign in event handler
 const onSignIn = function (event) {
   event.preventDefault()
 
@@ -29,6 +30,7 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+// change password event handler
 const onChangePassword = function (event) {
   event.preventDefault()
 
@@ -40,6 +42,7 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+// sign out event listener
 const onSignOut = function (event) {
   const form = event.target
   const data = getFormFields(form)

@@ -74,11 +74,6 @@ module.exports = {
   checkWin: checkWin
 }
 
-// const events = require('./events.js')
-// const gameArray = store.game.cells
-//
-// const playerPick = 'X'
-
 // const winConds = [
 //   // horizontal win
 //   [0, 1, 2],
@@ -93,21 +88,3 @@ module.exports = {
 //   [2, 4, 6]
 // ]
 //
-// const draw = function(gameArray) {
-//
-// }
-
-// gameArray.forEach(winConds, gameArray)
-
-// if the marker in index 0 = the marker in any of the winConds, invoke winner
-// const checkForWin = function () {
-//   gameArray.forEach(function (condition, gameArray) {
-//     if (playerPick === gameArray[winConds[0]] &&
-//       gameArray[winConds[0]] === gameArray[winConds[1]] &&
-//       gameArray[winConds[0]] === gameArray[winConds[2]]) {
-//       console.log('winner')
-//     } else {
-//       console.log('no winner yet')
-//     }
-//   })
-// }

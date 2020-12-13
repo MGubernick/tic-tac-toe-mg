@@ -44,6 +44,10 @@ input {
   border-radius: 5px;
 }
 
+a {
+  color: $font-color;
+}
+
 .box {
   align-items: center;
   background-color: $second-secondary;
