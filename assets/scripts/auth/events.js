@@ -21,6 +21,7 @@ const onSignUp = function (event) {
 // sign in event handler
 const onSignIn = function (event) {
   event.preventDefault()
+
   $('#change-password').show()
 
   const form = event.target
