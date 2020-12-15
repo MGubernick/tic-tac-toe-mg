@@ -61,4 +61,4 @@ As far as the CSS and Styling features, I spent a little time each night playing
 - I would like to eventually create a feature to allow alternate symbols to be chosen and used in the game
 
 ## Wireframes
-[Wireframe v1]: (https://i.imgur.com/ohWp7pM.jpg "Wireframe_v1")
+![Wireframe v1](https://i.imgur.com/ohWp7pM.jpg "Wireframe_v1")
