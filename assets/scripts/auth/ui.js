@@ -19,7 +19,7 @@ const signInSuccess = function (response) {
 
   store.user = response.user
   // console.log('store after is: ', store)
-
+  $('#after-game-ends').show()
   $('.before-sign-in').hide()
   $('.after-sign-in').show()
   $('#start-game').show()
