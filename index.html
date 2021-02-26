@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic-Tac-Toe-MG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1 class="headline">Let's Play Tic-Tac-Toe!</h1>
+  <h6 class="my-name">By Matt G.</h6>
+  <a href="https://en.wikipedia.org/wiki/Tic-tac-toe" target="_blank">What if I don't know how to play tic-tac-toe???</a>
+  <br>
+
+  <h1 id='message'></h1>
+
+  <div class="before-sign-in landing-page">
+    <form id="sign-in">
+      <input type="text" name="credentials[email]" placeholder="email" />
+      <input type="password" name="credentials[password]" placeholder="password" />
+      <button type="submit" name="button">Sign In!</button>
+    </form>
+
+    <form id="sign-up">
+      <input type="text" name="credentials[email]" placeholder="email" />
+      <input type="password" name="credentials[password]" placeholder="password" />
+      <input type="password" name="credentials[password_confirmation]" placeholder="confirm password" />
+      <button type="submit" name="button">Sign Up!</button>
+    </form>
+    <br/>
+
+    <h5>If you would like to check out the app but don't have an acccount, feel free to use these credentials, Enjoy!:</h5>
+    <h6>Email: te@st.com  Password: 123</h6>
+  </div>
+
+  <div class="after-sign-in">
+
+    <form id="change-password">
+      <input type="password" name="passwords[old]" placeholder="Old Password" />
+      <input type="password" name="passwords[new]" placeholder="New Password" />
+      <button type="submit" name="button">Change My Password!</button>
+    </form>
+
+    <button id="sign-out" class="sign-out" type="button" name="button">Sign Out!</button>
+  </div>
+
+  <div id="after-game-ends">
+    <br>
+    <button class="all-the-games" type="button">How Many Games Have I played?</button>
+
+  </div>
+
+  <h1 id="win-loss-message"></h1>
+
+  <form id="start-game">
+    <button class="new-game" type="button" name="button">New Game!</button>
+  </form>
+
+  <div class="after-new-game-click">
+    <h1>Tic-Tac-Toe-Game!</h1>
+    <div class="pick-player-buttons">
+      <button class="o-go-first" type="button" name="button">O Go First!</button>
+      <button class="x-go-first" type="button" name="button">X Go First!</button>
+    </div>
+    <h3 id="players-turn" >First Player: X</h3>
+    <h1 id="win-draw-text"></h1>
+    <h1 id="bad-space">Bad Move, Try Again!</h1>
+    <div class="container">
+      <div class="row">
+        <div data-cell-index="0" class="col-4 box alt-color click-space">
+          <h1 class="box-set">0</h1>
+        </div>
+        <div data-cell-index="1" class="col-4 box click-space">
+          <h1 class="box-set">1</h1>
+        </div>
+        <div data-cell-index="2" class="col-4 box alt-color click-space">
+          <h1 class="box-set">2</h1>
+        </div>
+        <div data-cell-index="3" class="col-4 box click-space">
+          <h1 class="box-set">3</h1>
+        </div>
+        <div data-cell-index="4" class="col-4 box alt-color click-space">
+          <h1 class="box-set">4</h1>
+        </div>
+        <div data-cell-index="5" class="col-4 box click-space">
+          <h1 class="box-set">5</h1>
+        </div>
+        <div data-cell-index="6" class="col-4 box alt-color click-space">
+          <h1 class="box-set">6</h1>
+        </div>
+        <div data-cell-index="7" class="col-4 box click-space">
+          <h1 class="box-set">7</h1>
+        </div>
+        <div data-cell-index="8" class="col-4 box alt-color click-space">
+          <h1 class="box-set">8</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
