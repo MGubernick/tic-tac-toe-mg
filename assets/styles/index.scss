@@ -48,6 +48,12 @@ a {
   color: $font-color;
 }
 
+.landing-page {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+
 .box {
   align-items: center;
   background-color: $second-secondary;
