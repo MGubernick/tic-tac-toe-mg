@@ -63,7 +63,7 @@ const onGameIndexSuccess = function (response) {
 }
 
 const onGameIndexFailure = function (error) {
-  $('message').text('Uh Oh, something went wrong...Error: ' + error.responseJSON.message)
+  $('#message').text('Uh Oh, something went wrong...Error: ' + error.responseJSON.message)
 }
 
 module.exports = {

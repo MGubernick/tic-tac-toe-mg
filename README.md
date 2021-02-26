@@ -5,10 +5,10 @@ The first project for our course is to build a tic-tac-toe game.
 ## Important Links & Resources Used:
 
 **Specific Links**
-[game project api repo](https://git.generalassemb.ly/mgubernick/game-project-api)
-[game docs](https://git.generalassemb.ly/mgubernick/game-project-api/blob/master/docs/game.md#update-request-body)
-[authentication docs](https://git.generalassemb.ly/mgubernick/game-project-api/blob/master/docs/user.md)
-[tic-tac-toe Wiki](https://en.wikipedia.org/wiki/Tic-tac-toe)
+- [game project api repo](https://git.generalassemb.ly/mgubernick/game-project-api)
+- [game docs](https://git.generalassemb.ly/mgubernick/game-project-api/blob/master/docs/game.md#update-request-body)
+- [authentication docs](https://git.generalassemb.ly/mgubernick/game-project-api/blob/master/docs/user.md)
+- [tic-tac-toe Wiki](https://en.wikipedia.org/wiki/Tic-tac-toe)
 
 **Website Resources**
 - w3schools.com

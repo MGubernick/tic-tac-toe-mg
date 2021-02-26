@@ -23,7 +23,7 @@ const signInSuccess = function (response) {
   $('.before-sign-in').hide()
   $('.after-sign-in').show()
   $('#start-game').show()
-  $('form').trigger('reset')
+  // $('form').trigger('reset')
 }
 
 const signInFailure = function (error) {
